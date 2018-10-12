@@ -1,0 +1,48 @@
+public class HandValue {
+    private static char startCardSuit;
+    private static int startCardRank;
+    private static char[] suit = new char[5];
+    private static int[] rank = new int[5];
+    private static int score = 0;
+
+    public static void main(String[] args) {
+        startCardSuit = suit[4];
+        startCardRank = rank[4];
+
+
+        for (int i = 0; i < 5; i++) {
+            suit[i] = args[i].charAt(1);
+        }
+
+
+
+        System.out.println(suit[2]);
+
+        for (int index = 0; index < 4; index++) {
+            if ((suit[index] == startCardSuit) && (suit[index] == 'J')) {
+                score++;
+            }
+
+        }
+
+        if ((suit[0] == suit[1]) && (suit[1] == suit[2]) && (suit[2] == suit[3])) {
+            if (suit[3] == startCardSuit) {
+                score = score + 5;
+            }else {
+                score = score + 4;
+            }
+        }
+
+        
+
+
+
+
+
+
+
+
+        System.out.println(score);
+    }
+
+}
